@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de...</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-
-<body class="bg-light">
-    <header class="container text-center text-primary mt-5">
-        <h1 class="display-4 fw-bold text-warning bg-dark rounded-3 p-3">Acerca de Mí</h1>
-    </header>
-    <nav class="navbar navbar-expand-lg bg-info rounded mb-4 mt-4">
-        <div class="container">
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link text-dark fw-semibold" href="Inicio">Inicio</a>
-                    <a class="nav-link text-success fw-semibold" href="animales">Animales Exóticos</a>
-                    <a class="nav-link text-primary fw-semibold" href="vehiculos">Vehículos Antiguos</a>
-                    <a class="nav-link text-danger fw-semibold" href="maravillas">Las Maravillas del Mundo</a>
-                    <a class="nav-link text-secondary fw-semibold" href="acerca">Acerca de...</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <main class="container mt-5">
+{% extends 'Plantilla_base.html' %}
+{% block title %}Acerca de Mí{% endblock %}
+{% block header %}Acerca de Mí{% endblock %}
+{% block contenido %}
         <div class="container bg-warning rounded-4 p-4 mb-4">
             <h2 class="text-success fw-bold">Mis Gustos</h2>
             <p class="text-dark"> Me gusta mucho programar y crear cosas con código. También disfruto jugar videojuegos
@@ -52,13 +21,4 @@
             <h2 class="text-warning fw-bold">Nombre Completo</h2>
             <p class="text-light fw-semibold">Renteria Ramirez Ramon Eduardo</p>
         </div>
-    </main>
-    <footer class="bg-dark text-light text-center p-3 mt-5">
-        <p class="mb-0">© 2025 Desarrollo de Plantilla Base</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+{% endblock %}

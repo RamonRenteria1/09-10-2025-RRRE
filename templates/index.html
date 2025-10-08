@@ -1,9 +1,49 @@
-{%extends "Plantilla_base.html"%}
+{% extends "Plantilla_base.html" %}
 
+{% block title %}Inicio{% endblock %}
+{% block header %}Bienvenido a Mi Página{% endblock %}
 
-{% block content%}
+{% block contenido %}
+<div class="container bg-warning rounded-4 p-4 mb-4 text-center">
+  <h2 class="text-success fw-bold">¿Qué encontrarás en esta página?</h2>
+  <p class="text-dark">
+    En esta página exploraremos diferentes temas interesantes: animales
+    exóticos, vehículos antiguos y las maravillas del mundo. Cada sección
+    incluye información detallada, imágenes y curiosidades que te permitirán
+    aprender de forma divertida.
+  </p>
+</div>
 
+<div class="row mt-4 mb-4">
+  <div class="col-md-6 text-center">
+    <img
+      src="/static/img/Captura de pantalla 2025-10-06 170355.png"
+      alt="Animales Exóticos"
+      class="img-fluid rounded border border-success"
+    />
+    <h5 class="mt-2 text-success">Animales Exóticos</h5>
+  </div>
+  <div class="col-md-6 text-center">
+    <img
+      src="/static/img/Captura de pantalla 2025-10-06 170211.png"
+      alt="Vehículos Antiguos"
+      class="img-fluid rounded border border-primary"
+    />
+    <h5 class="mt-2 text-primary">Vehículos Antiguos</h5>
+  </div>
+</div>
 
-
-
+<div class="container bg-info rounded-4 p-4 mb-4 text-center">
+  <p class="text-dark">
+    Al explorar cada sección aprenderás más sobre lo que a ti te guste, ya sea
+    carros, animales o maravillas. Podrás usar el menú para explorar secciones
+    como animales exóticos, vehículos antiguos y maravillas del mundo. Ver
+    imágenes y leer información en cada sección para informarte más sobre la
+    naturaleza o sobre lo que el ser humano ha construido. Aprender curiosidades
+    de manera visual y sencilla. Disfrutar de una experiencia organizada y
+    atractiva gracias al diseño y estructura de la plantilla y también aprender
+    sobre lo que le gusta al creador de la página y saber más información
+    sobre él y sus gustos.
+  </p>
+</div>
 {% endblock %}
