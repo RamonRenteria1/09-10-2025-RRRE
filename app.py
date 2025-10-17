@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = '2423415414'  
 
 @app.route('/')
 def inicio():
@@ -16,11 +17,14 @@ def registrar():
         nombres = request.form.get('nombres')
         apellido = request.form.get('apellido')
         email = request.form.get('email')
+        contraseña = request.form.get('password')  
+        confirmarcontraseña = request.form.get('confirm_password')  
 
-        
+        if contraseña != confirmarcontraseña:
+            flash("Las contraseñas no coinciden.", "error")
+            return redirect(url_for('registrar'))
+
         print(f"Nuevo registro: {nombres} {apellido} - {email}")
-
-        # Después del registro manda al inicio
         return redirect(url_for('index'))
 
     return render_template('Registrar.html')
