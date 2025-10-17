@@ -1,10 +1,19 @@
 from flask import Flask, render_template
 
+
 app = Flask(__name__)
 
 
 
 @app.route('/')
+def Inicio():
+    return render_template('/Formulario.html')
+
+@app.route('/Iniciar Sesion')
+def sesion():
+    render_template('/IniciarSecion.html')
+
+@app.route('/index')
 def index():
     return render_template('/index.html')
 
