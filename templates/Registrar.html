@@ -1,0 +1,160 @@
+{% extends 'Plantilla_base.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block header %}Crear Cuenta{% endblock %}
+
+{% block contenido %}
+
+
+ <section class="col-md-4 mx-auto">
+            
+            <form method="POST" action="{{ url_for('registrar') }}" class="mx-auto">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <input type="text" name="nombres" class="form-control" placeholder="Nombre(s)" required minlength="3" maxlength="40" value="{{ request.form.get('nombres', '') }}">
+                    </div>
+                    <div class="mb-3 col">
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido(s)" required minlength="3" maxlength="40" value="{{ request.form.get('apellido', '') }}">
+                    </div>
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label class="form-label">Fecha de nacimiento</label>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-select" name="dia" required value="{{ request.form.get('dia', '') }}"> 
+                                <option disabled selected>Día</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-select" name="mes" required value="{{ request.form.get('mes', '') }}">
+                                <option disabled selected>Mes</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-select" name="año" required value="{{ request.form.get('año', '') }}">
+                                <option disabled selected>Año</option>
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                                <option>2006</option>
+                                <option>2007</option>
+                                <option>2008</option>
+                                <option>2009</option>
+                                <option>2010</option>
+                                <option>2011</option>
+                                <option>2012</option>
+                                <option>2013</option>
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required value="{{ request.form.get('email', '') }}" pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|outlook\.com|yahoo\.com)">
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required minlength="8" maxlength="20" value="{{ request.form.get('password', '') }}">
+                </div>
+
+                
+                <div class="mb-3">
+                    <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirmar contraseña" required minlength="8" maxlength="20" value="{{ request.form.get('confirm_password', '') }}">
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label class="form-label d-block">Género</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genero" value="hombre" value="{{ request.form.get('genero', '') }}">
+                        <label class="form-check-label">Hombre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genero" value="mujer" value="{{ request.form.get('genero', '') }}">
+                        <label class="form-check-label">Mujer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genero" value="otro" value="{{ request.form.get('genero', '') }}">
+                        <label class="form-check-label">Otro</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100 mb-3">
+                    Registrarte
+                </button>
+
+
+                <p class="small text-muted text-start">
+                    Al hacer clic en "Registrarte", aceptas nuestras Condiciones, la Política de privacidad y la
+                    Política de cookies. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando
+                    quieras.
+                </p>
+                <a href="#">¿Ya Tienes Una Cuenta?</a>
+            </form>
+        </section>
+
+    </div>
+
+
+{% endblock %}
