@@ -17,7 +17,7 @@
             <form method="POST" action="{{ url_for('register_user') }}" class="mx-auto">
                 <div class="row">
                     <div class="mb-3 col">
-                        <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" required required minlength="3" value="{{ request.form.get('username', '') }}">
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre(s)" required required minlength="3" value="{{ request.form.get('username', '') }}>
                     </div>
                     <div class="mb-3 col">
                         <input type="text" name="apellido" class="form-control" placeholder="Apellido(s)" required>
@@ -28,7 +28,7 @@
                     <label class="form-label">Fecha de nacimiento</label>
                     <div class="row">
                         <div class="col">
-                            <select class="form-select" name="dia" required> 
+                            <select class="form-select" name="dia" required value="{{ request.form.get('dia', '') }}"> 
                                 <option disabled selected>Día</option>
                                 
                                 <option>1</option>
@@ -65,7 +65,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select class="form-select" name="mes" required>
+                            <select class="form-select" name="mes" required value="{{ request.form.get('mes', '') }}">
                                 <option disabled selected>Mes</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -82,7 +82,7 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select class="form-select" name="año" required>
+                            <select class="form-select" name="año" required value="{{ request.form.get('username', '') }}">
                                 <option disabled selected>Año</option>
                                 <option>2000</option>
                                 <option>2001</option>
