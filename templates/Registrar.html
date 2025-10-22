@@ -61,38 +61,14 @@
             </div>
         </div>
 
-<div class="mb-3 text-start">
-  <label class="form-label">Fecha de nacimiento</label>
-  <div class="row">
+
     
-    <div class="col">
-      <select class="form-select" name="dia" required>
-        <option disabled {% if not request.form.get('dia') %}selected{% endif %}>Día</option>
-        {% for i in range(1, 32) %}
-          <option value="{{ i }}" {% if request.form.get('dia')|int == i %}selected{% endif %}>{{ i }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    
-    
-    <div class="col">
-      <select class="form-select" name="mes" required>
-        <option disabled {% if not request.form.get('mes') %}selected{% endif %}>Mes</option>
-        {% for i in range(1, 13) %}
-          <option value="{{ i }}" {% if request.form.get('mes')|int == i %}selected{% endif %}>{{ i }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    
-    
-    <div class="col">
-      <select class="form-select" name="año" required>
-        <option disabled {% if not request.form.get('año') %}selected{% endif %}>Año</option>
-        {% for i in range(2000, 2026) %}
-          <option value="{{ i }}" {% if request.form.get('año')|int == i %}selected{% endif %}>{{ i }}</option>
-        {% endfor %}
-      </select>
-    </div>
+    <div class="row mb-3">
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="dia" placeholder="Día" required value="{{ request.form.get('dia', '') }}">
+                    </div>
+                </div>
   </div>
 </div>
 

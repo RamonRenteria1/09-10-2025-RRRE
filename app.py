@@ -20,8 +20,7 @@ def registrar():
         contraseña = request.form.get('password')  
         confirmarcontraseña = request.form.get('confirm_password')  
         dia = request.form.get('dia')
-        mes = request.form.get('mes')
-        año = request.form.get('año')
+
 
         if contraseña != confirmarcontraseña:
             flash("Las contraseñas no coinciden.", "error")
