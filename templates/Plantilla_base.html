@@ -31,6 +31,12 @@
                 <a class="nav-link text-danger fw-semibold" href="/maravillas">Las Maravillas del Mundo</a>
                 <a class="nav-link text-secondary fw-semibold" href="/acerca">Acerca de...</a>
                 <a class="nav-link text-warning fw-semibold" href="/registro">Registro</a>
+                {% if session.get("usuario_nombre") == None %}
+                <a class="nav-link text-warning fw-semibold" href="/Login">Iniciar sesión</a>
+                {% else %}
+                <a class="nav-link text-warning fw-semibold" href="/Logout">Cerrar sesión</a>
+                {% endif %}
+
             </div>
         </div>
     </div>

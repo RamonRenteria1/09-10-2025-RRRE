@@ -1,7 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
-app.secret_key = '2423415414'  
+
+USUARIOS_REGISTRADOS = {
+    'admin@correo.com':{
+        'pasword': 'Admin123',
+        'nombre': 'Administrador',
+        'Fecha de Nacimiento': '1990-01-01'
+        
+    }
+}
+
+app.secret_key = '92520380'  
 
 @app.route('/')
 def inicio():
@@ -10,6 +20,8 @@ def inicio():
 @app.route('/index')
 def index():
     return render_template('index.html')
+
+
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registrar():
@@ -30,6 +42,10 @@ def registrar():
         return redirect(url_for('index'))
 
     return render_template('Registrar.html')
+
+@app.route('/Login')
+def login():
+    return render_template('IniciarSesion.html')
 
 @app.route('/acerca')
 def acerca():
