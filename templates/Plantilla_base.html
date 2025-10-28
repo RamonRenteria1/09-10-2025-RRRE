@@ -12,40 +12,42 @@
 <body class="bg-light">
 
     <header class="container text-center text-primary mt-5">
-        <h1 class="display-4 fw-bold text-warning bg-dark rounded-3 ">{% block header %}Desarrollo De Plantilla Base{% endblock %}</h1>
+        <h1 class="display-4 fw-bold text-warning bg-dark rounded-3 ">
+            {% block header %}Desarrollo De Plantilla Base{% endblock %}
+        </h1>
     </header>
+
     <main class="container mt-5">
-{% block navbar %}
-<nav class="navbar navbar-expand-lg bg-info rounded mb-4 mt-4">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link text-dark fw-semibold" href="/index">Inicio</a>
-                <a class="nav-link text-success fw-semibold" href="/animales">Animales Exóticos</a>
-                <a class="nav-link text-primary fw-semibold" href="/vehiculos">Vehículos Antiguos</a>
-                <a class="nav-link text-danger fw-semibold" href="/maravillas">Las Maravillas del Mundo</a>
-                <a class="nav-link text-secondary fw-semibold" href="/acerca">Acerca de...</a>
-                <a class="nav-link text-warning fw-semibold" href="/registro">Registro</a>
-                {% if session.get("usuario_nombre") == None %}
-                <a class="nav-link text-warning fw-semibold" href="/Login">Iniciar sesión</a>
-                {% else %}
-                <a class="nav-link text-warning fw-semibold" href="/Logout">Cerrar sesión</a>
-                {% endif %}
+        {% block navbar %}
+        <nav class="navbar navbar-expand-lg bg-info rounded mb-4 mt-4">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-dark fw-semibold" href="/index">Inicio</a>
+                        <a class="nav-link text-success fw-semibold" href="/animales">Animales Exóticos</a>
+                        <a class="nav-link text-primary fw-semibold" href="/vehiculos">Vehículos Antiguos</a>
+                        <a class="nav-link text-danger fw-semibold" href="/maravillas">Las Maravillas del Mundo</a>
+                        <a class="nav-link text-secondary fw-semibold" href="/acerca">Acerca de...</a>
+                        <a class="nav-link text-warning fw-semibold" href="/registro">Registro</a>
 
+
+                        {% if session.get('logueado') %}
+                        <a class="nav-link text-danger fw-semibold" href="{{ url_for('logout') }}">Cerrar Sesión</a>
+                        {% else %}
+                        <a class="nav-link text-warning fw-semibold" href="{{ url_for('login') }}">Iniciar Sesión</a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</nav>
-{% endblock %}
+        </nav>
+        {% endblock %}
 
-    
         {% block contenido %}
-        
         {% endblock %}
     </main>
 
